@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Yet Another Org-mode Presentation Script</title>
+<!-- 2016-12-01 木 09:47 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Masataro Asai" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/layout.css" />
+<link rel="stylesheet" type="text/css" href="css/default.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.loupe.min.js"></script>
+<script type="text/javascript" src="js/jgestures/jgestures.min.js"></script>
+<script type="text/javascript" src="js/code.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Yet Another Org-mode Presentation Script</h1>
+<div class="outline-text-1">
+<div class="xlarge">
+<div class="center">
+<p>
+IBM Research 体験談
+</p>
+</div>
+
+</div>
+
+<div class="note">
+<div class="alignright">
+<p>
+Made by guicho2.71828 (Masataro Asai)
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 概要</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+岸本先生およびAdi と研究をしてきました
+</p>
+
+<p>
+渡航先: アイルランド
+</p>
+
+<p>
+渡航機関: 7/26-11/4
+</p>
+
+<p>
+契約期間: 8/1-10/31
+</p>
+
+<p>
+実際の契約期間: 8/2-10/28
+</p>
+
+<p>
+実際の活動期間: 8/20-10/28
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> アイルランド</h2>
+<div class="outline-text-2" id="text-2">
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span6">
+
+<div class="figure">
+<p><img src="img/static/ireland.png" alt="ireland.png" />
+</p>
+</div>
+
+</div>
+<div class="span6">
+<ul class="org-ul">
+<li>EU加盟国
+</li>
+<li>法人税回避のためIT企業が集結
+</li>
+<li>「ダブルアイリッシュ・ダッチサンドイッチ」
+</li>
+<li>気候: 冷涼,にわか雨↔曇りの繰り返し,太陽低い,≈イギリス
+</li>
+<li>人の性格: 大雑把
+</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> 申し込みの流れ</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>? : メンター(例:岸本先生)がインターンシップの計画を作り会社に提出
+</li>
+<li>2015/6  : 知り合った人にポスト無いかどうか尋ねておく (事前に根回し)
+</li>
+<li>2015/12 : 応募の掲示
+</li>
+<li>2016/3:  応募の最終期限 ただし埋まり次第決定
+</li>
+<li>2015/12:  その企業の Job Opportunity ウェブサイトから登録
+</li>
+<li>何段階かの審査を経る(二ヶ月ぐらいかかる)
+</li>
+<li>審査を通ると、自分の名前、経歴等が社内のどこかに掲示されるらしい
+</li>
+<li>メンターが気に入った人を選ぶ &#x2014; 根回しがここで効く。ただし採用されるかは不明
+</li>
+<li>2016/2: 最終面接 (国際電話)
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> 採用後の流れ</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Visa関連 &#x2013; 日本人はアイルランド入国に関しVISAはいらない
+</li>
+<li>Hosting Agreement &#x2013; 就労許可を得るためのEU/アイルランドのシステムの1つ。
+<ul class="org-ul">
+<li>国際郵便がロストしたので直前に送り直しなど
+</li>
+</ul>
+</li>
+<li>契約書
+<ul class="org-ul">
+<li>郵送+メール
+</li>
+</ul>
+</li>
+<li>国内手続き
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> 国内手続き</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>国内(JSPS) = ヤクザの親分
+<ul class="org-ul">
+<li>多数の手続きを設けることで国際化を妨害
+</li>
+<li>3ヶ月以上の海外渡航を認めない
+</li>
+<li>→本来4ヶ月のインターンを短縮することに
+</li>
+</ul>
+</li>
+<li>国内(大学)
+<ul class="org-ul">
+<li>契約書を二週間で返信しないといけない
+</li>
+<li>来月の教授会まで待て? 今日やれ今日
+</li>
+<li>confidentialな契約書の内容を見せろ?
+</li>
+</ul>
+</li>
+<li>国内(学科) (略)
+</li>
+
+<li>結論: センスの悪い人間/技術/組織と関わりを持つのは時間の無駄
+</li>
+
+<li>結論: Lisp で書け
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> 準備(持ち物): アウトドア/ノマド生活を基本に。</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>夏服、冬服
+</li>
+<li>調理器具 ← アウトドア用の食器がおすすめ。コンパクトにフライパン、鍋、皿を収納
+</li>
+<li>調味料 ← めんつゆ, わさび
+</li>
+<li>プログラミング環境。
+<ul class="org-ul">
+<li>Hackers = Painters. 能力を最高に保つため 慣れ親しんだ道具を確保するのはプロの責務。
+</li>
+<li><b>キーボード</b> ← プログラマにとって指と手は命。
+</li>
+<li><b>ディスプレイ</b> ← 必ずセカンドディスプレイをもらえるとは考えない
+</li>
+<li><b>工具</b> ← 最低限自分のノートパソコンを修理できるだけの工具
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> 写真</h3>
+<div class="outline-text-3" id="text-6-1">
+
+<div class="figure">
+<p><img src="img/static/cooker.jpg" alt="cooker.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> 写真</h3>
+<div class="outline-text-3" id="text-6-2">
+
+<div class="figure">
+<p><img src="img/static/display.jpg" alt="display.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> 写真</h3>
+<div class="outline-text-3" id="text-6-3">
+
+<div class="figure">
+<p><img src="img/static/fix.jpg" alt="fix.jpg" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> 準備(住居): Airbnb 最高!!!</h2>
+<div class="outline-text-2" id="text-7">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">期間</th>
+<th scope="col" class="left">場所</th>
+<th scope="col" class="left">Approx. JPY/day</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">7/26-8/04</td>
+<td class="left">南ダブリン, Airbnb, 部屋の片隅のベッド</td>
+<td class="left">4k</td>
+</tr>
+
+<tr>
+<td class="left">-9/4</td>
+<td class="left">ダブリン市内, Daft.ie, 三人部屋二段ベッド上</td>
+<td class="left">1.3k (500EUR/month)</td>
+</tr>
+
+<tr>
+<td class="left">-10/31</td>
+<td class="left">ダブリン郊外, Airbnb, 個室</td>
+<td class="left">2.4k (800EUR/month)</td>
+</tr>
+
+<tr>
+<td class="left">11/1</td>
+<td class="left">Galway, Airbnb, 個室</td>
+<td class="left">3.6k</td>
+</tr>
+
+<tr>
+<td class="left">11/2</td>
+<td class="left">Belfast UK, Airbnb, 個室</td>
+<td class="left">3.8k</td>
+</tr>
+
+<tr>
+<td class="left">11/3</td>
+<td class="left">Dublin, Airbnb, 個室</td>
+<td class="left">3.9k</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> 同居人</h3>
+<div class="outline-text-3" id="text-7-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">期間</th>
+<th scope="col" class="left">場所</th>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">7/26-8/04</td>
+<td class="left">部屋の片隅のベッド</td>
+<td class="left">Venezuera</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">German</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">Taiwan</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">-9/4</td>
+<td class="left">三人部屋二段ベッド上</td>
+<td class="left">Spain</td>
+<td class="left">China</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">9-10人で集団生活</td>
+<td class="left">Italy</td>
+<td class="left">Brazil</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">France</td>
+<td class="left">Russia</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">Libya</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">-10/31</td>
+<td class="left">個室</td>
+<td class="left">Italy</td>
+<td class="left">Croatia</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">3-4人で集団生活</td>
+<td class="left">France</td>
+<td class="left">Estonia</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> 部屋 (ダブリン市内)</h3>
+<div class="outline-text-3" id="text-7-2">
+
+<div class="figure">
+<p><img src="img/static/patric.jpg" alt="patric.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> 部屋 (ダブリン郊外)</h3>
+<div class="outline-text-3" id="text-7-3">
+
+<div class="figure">
+<p><img src="img/static/ingram.jpg" alt="ingram.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-4" class="outline-3">
+<h3 id="sec-7-4"><span class="section-number-3">7.4</span> 部屋 (ダブリン郊外) Charlie</h3>
+<div class="outline-text-3" id="text-7-4">
+
+<div class="figure">
+<p><img src="img/static/charlie.jpg" alt="charlie.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-5" class="outline-3">
+<h3 id="sec-7-5"><span class="section-number-3">7.5</span> ルームメイト (ダブリン市内)</h3>
+<div class="outline-text-3" id="text-7-5">
+
+<div class="figure">
+<p><img src="img/static/roommates.jpg" alt="roommates.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-6" class="outline-3">
+<h3 id="sec-7-6"><span class="section-number-3">7.6</span> ルームメイト (ダブリン郊外)</h3>
+<div class="outline-text-3" id="text-7-6">
+
+<div class="figure">
+<p><img src="img/static/iralia.jpg" alt="iralia.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-7" class="outline-3">
+<h3 id="sec-7-7"><span class="section-number-3">7.7</span> ルームメイト (ダブリン郊外)</h3>
+<div class="outline-text-3" id="text-7-7">
+
+<div class="figure">
+<p><img src="img/static/andrei.jpg" alt="andrei.jpg" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> IBM Research Ireland</h2>
+<div class="outline-text-2" id="text-8">
+
+<div class="figure">
+<p><img src="img/static/campus.png" alt="campus.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> IBM Research Ireland</h2>
+<div class="outline-text-2" id="text-9">
+
+<div class="figure">
+<p><img src="img/campus-fake.png" alt="campus-fake.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> 環境</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+食堂は不味い/2時に閉まる/売店なし/周囲に何もない
+</p>
+
+
+<div class="figure">
+<p><img src="img/static/nothing.jpg" alt="nothing.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> 到着後</h2>
+<div class="outline-text-2" id="text-11">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">日時</th>
+<th scope="col" class="left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">7/26</td>
+<td class="left">到着</td>
+</tr>
+
+<tr>
+<td class="left">7/29</td>
+<td class="left">移民登録 (350€ &#x2013; 自費)</td>
+</tr>
+
+<tr>
+<td class="left">8/2</td>
+<td class="left">始めてキャンパス内に</td>
+</tr>
+
+<tr>
+<td class="left">~8/9</td>
+<td class="left">ようやくイントラネットアカウント</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">＝インターネットアクセス</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">＝apt-get で開発環境を構築</td>
+</tr>
+
+<tr>
+<td class="left">~8/20</td>
+<td class="left">ようやくサーバーアカウント</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">まともに開発できるようになる</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+実質まともに開発できたのは二ヶ月ちょい
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> 病的な既存コード</h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>テスト無し CI無し ドキュメント無し
+</li>
+<li>コードレビュー無し スタイル統一無し
+</li>
+<li>ビルドできない古い無数のサブプロジェクト, それらのためだけの関数
+</li>
+<li>不適切なクラス構造, switch 文, 不適切なメソッド名, もはや呼ばれていない関数
+</li>
+<li>手でJSON書き出し (しかも間違ってる)
+</li>
+<li>インスタンスをコピーするのにそのJSONに書き出して読み込む
+</li>
+</ul>
+
+<p>
+まともなプロセス間APIを手に入れるためのリファクタリングに一ヶ月 (研究できず)
+</p>
+
+<p>
+実質まともに研究できたのは一ヶ月 (他のチームはまともなコードなのに…)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> 救い</h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li><b>他のチームは</b> もっと現代的な環境で開発してる
+</li>
+<li>社内に github enterprise がある
+</li>
+<li>Travis-CI enterprise もある
+</li>
+<li>→ 自分でCIをセットアップした
+</li>
+<li>→ 自動テストも書いた
+</li>
+<li>→ 古いコードは全部捨て
+</li>
+<li>→ 残りをリファクタリング
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> 給料</h2>
+<div class="outline-text-2" id="text-14">
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span6">
+
+<div class="figure">
+<p><img src="img/static/pay.png" alt="pay.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>最初の1ヶ月:45% (Emergency Tax)
+</li>
+
+<li>残り2ヶ月: 20%
+</li>
+
+<li>月22万 - 住居8万 = 14万
+</li>
+
+<li>交通費、食事&#x2026;
+</li>
+
+<li>航空券16万, 移民登録 3万5千
+</li>
+</ul>
+
+</div>
+<div class="span6">
+<p>
+<b>アイルランド固有の事情</b>
+</p>
+
+<ul class="org-ul">
+<li>統一賃金支払いシステム: PAYE Anytime
+</li>
+<li>PAYE Anytime の支払いはアイルランドの銀行のみ <b>WTF</b>
+</li>
+<li>現地銀行口座を開設するまで給料を貰えない
+</li>
+<li>現金を用意しておかないと一文無しに!
+</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> 働きかた</h2>
+<div class="outline-text-2" id="text-15">
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span6">
+<p>
+出勤/退勤時間は自由
+</p>
+
+<p>
+ただしバスは30分に一本しかありません
+</p>
+
+<p>
+ミーティングなければ別に来なくてもいい
+</p>
+
+<p>
+ただし超絶面倒くさいVPNのセットアップが必要
+</p>
+
+</div>
+<div class="span6">
+<p>
+<b>実際の働き方</b>
+</p>
+
+<p>
+時間がない!
+</p>
+
+<p>
+平日: 持ち帰りで家で作業
+</p>
+
+<p>
+土日: 早朝まで作業 朝4時ぐらいまで実験
+</p>
+
+<p>
+→ 月曜のミーティングのために実験結果を準備etc.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> まとめ: 海外インターンシップから何を得られるか</h2>
+<div class="outline-text-2" id="text-16">
+<ul class="org-ul">
+<li>経歴、「箔」、 CV
+</li>
+<li>コネ &#x2014; 知り合い
+</li>
+<li>技術経験・・・メンターに依る。(自分は特に得るものはなかった)
+<ul class="org-ul">
+<li>教えてもらう ← 当然通用しない
+</li>
+<li>が、人の尻拭いをすることになるとは予想しなかった
+</li>
+<li>自分が身に着けたい異分野技術を専門とするメンターと組むべきかも
+</li>
+</ul>
+</li>
+<li>(ネガティブな)社会経験・・・得られるが、本来避けるべきもの (事務手続きの苦労など)
+</li>
+<li>海外経験・・・移住の知識や多国籍文化。日常生活
+</li>
+<li>論文 ・・・ 書けるが、大学と比べて効率は悪い
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Masataro Asai</p>
+<p class="date">Created: 2016-12-01 木 09:47</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
