@@ -8,13 +8,9 @@
 #+BEGIN_outline-text-1
 #+BEGIN_XLARGE
 #+BEGIN_CENTER
-To Start Press "n"
+IBM Research 体験談
 #+END_CENTER
 #+END_XLARGE
-
-#+BEGIN_CENTER
-*WARN* Turn off your custom keyboard shortcuts
-#+END_CENTER
 
 #+BEGIN_NOTE
 #+BEGIN_ALIGNRIGHT
@@ -23,286 +19,267 @@ Made by guicho2.71828 (Masataro Asai)
 #+END_NOTE
 #+END_outline-text-1
 
-* What Is It?
+* 概要
 
-#+BEGIN_XLARGE
-An Alternative to
-#+BEGIN_CENTER
-Org-based Presentation
-#+END_CENTER
-#+BEGIN_ALIGNRIGHT
-Method
-#+END_ALIGNRIGHT
-#+END_XLARGE
+岸本先生およびAdi と研究をしてきました
 
-#+BEGIN_CENTER
-Proceed with "n"
-#+END_CENTER
+渡航先: アイルランド
 
-* Usage (on browsers)
+渡航機関: 7/26-11/4
 
-#+BEGIN_SMALLER
+契約期間: 8/1-10/31
+
+実際の契約期間: 8/2-10/28
+
+実際の活動期間: 8/20-10/28
+
+* アイルランド
 
 #+BEGIN_CONTAINER-FLUID
 #+BEGIN_ROW-FLUID
 #+BEGIN_SPAN6
-+ n,<Space> :: go to the next slide/expand a list
-+ p :: back to the previous slide
-+ u, ^ :: go to the parent section
-+ N :: expand all list in the current slide
+[[png:static/ireland]]
 #+END_SPAN6
 #+BEGIN_SPAN6
-+ s, or typing "go" :: jump to an arbitrary section (using minibuffer)
-+ d :: debugging mode (shows content border)
-+ <Ctrl-g> or <Esc> :: cancel current key strokes
-+ typing "help" :: show available commands in the minibuffer!
++ EU加盟国
++ 法人税回避のためIT企業が集結
++ 「ダブルアイリッシュ・ダッチサンドイッチ」
++ 気候: 冷涼,にわか雨↔曇りの繰り返し,太陽低い,≈イギリス
++ 人の性格: 大雑把
 #+END_SPAN6
 #+END_ROW-FLUID
 #+END_CONTAINER-FLUID
 
-#+END_SMALLER
+* 申し込みの流れ
 
-* Usage (on emacs)
++ ? : メンター(例:岸本先生)がインターンシップの計画を作り会社に提出
++ 2015/6  : 知り合った人にポスト無いかどうか尋ねておく (事前に根回し)
++ 2015/12 : 応募の掲示
++ 2016/3:  応募の最終期限 ただし埋まり次第決定
++ 2015/12:  その企業の Job Opportunity ウェブサイトから登録
++ 何段階かの審査を経る(二ヶ月ぐらいかかる)
++ 審査を通ると、自分の名前、経歴等が社内のどこかに掲示されるらしい
++ メンターが気に入った人を選ぶ --- 根回しがここで効く。ただし採用されるかは不明
++ 2016/2: 最終面接 (国際電話)
 
-1. clone [[https://github.com/guicho271828/another-org-info][our repo]]
+* 採用後の流れ
 
-2. =make html= to publish
++ Visa関連 -- 日本人はアイルランド入国に関しVISAはいらない
++ Hosting Agreement -- 就労許可を得るためのEU/アイルランドのシステムの1つ。
+  + 国際郵便がロストしたので直前に送り直しなど
++ 契約書
+  + 郵送+メール
++ 国内手続き
 
-3. show it on your browser!
+* 国内手続き
 
-* Virtue
++ 国内(JSPS) = ヤクザの親分
+  + 多数の手続きを設けることで国際化を妨害
+  + 3ヶ月以上の海外渡航を認めない
+  + →本来4ヶ月のインターンを短縮することに
++ 国内(大学)
+  + 契約書を二週間で返信しないといけない
+  + 来月の教授会まで待て? 今日やれ今日
+  + confidentialな契約書の内容を見せろ?
++ 国内(学科) (略)
 
-+ Simplicity
-  + =code.js= is a pure javascript, only has 200 lines (increasing as new features
-    are added)
-+ Extensibility
-  + you can write your own extension and its easy
-  + set a function to =keyManager.<your-key-strokes>=
-  + the key strokes should contain character $c$ within char code $32 < c < 126$
-    + =Space,!,",...A,B,C,...x,y,z,{,|,~=
-+ LICENSE
-  + GPLv3 ?? < not attatched a license yet
++ 結論: センスの悪い人間/技術/組織と関わりを持つのは時間の無駄
 
-* Example: Expanding a List
++ 結論: Lisp で書け
 
-+ *the dots* tell "/this is a content/"
-+ list
-+ list
-* Dependencies
-<<dependency>>
+# センスの悪い人間と関わるのは時間の無駄
+# 
+# センスの悪い言語/技術と関わるのも時間の無駄
 
-+ jQuery (included)
-+ Inkscape (image conversion)
-+ org-mode (included)
-+ MathJax (optional submodule)
+* 準備(持ち物): アウトドア/ノマド生活を基本に。
 
-* LaTeX output
++ 夏服、冬服
++ 調理器具 ← アウトドア用の食器がおすすめ。コンパクトにフライパン、鍋、皿を収納
++ 調味料 ← めんつゆ, わさび
++ プログラミング環境。
+  + Hackers = Painters. 能力を最高に保つため 慣れ親しんだ道具を確保するのはプロの責務。
+  + *キーボード* ← プログラマにとって指と手は命。
+  + *ディスプレイ* ← 必ずセカンドディスプレイをもらえるとは考えない
+  + *工具* ← 最低限自分のノートパソコンを修理できるだけの工具
 
-+ [[file:presen.pdf][PDF Presentaiton]] presen.pdf -- presentation in pdf with similar
-  appearance. Useful when browser-based presentation is not allowed
-+ [[file:resume.pdf][Printable Resume]] resume.pdf -- short and printed version.
-+ =make pdf= and =make resume= on the shell
-+ need the latest $\mbox{\TeX}$ live installation
-  + see =Makefile=
-  + =platex= and =dvipdfmx=
-  + alternatively, =pdflatex=
+** 写真
 
-* Images
+[[jpg:static/cooker]]
 
-+ Put images into =img/= directory.
-+ svg files are converted into png.
-  + We recommend it because
-    1. In html presentation, the inserted svg images capture the keyboard and mouse event
-       and the presentation sometimes does not work right.
-    2. In resume output and pdf presentation, the =svg= and =svg-inkscape= package is a
-       bit buggy and I personally failed make it work.
-+ svg-png conversion is done by =inkscape=
-  + but you can also use ImageMagick =convert= command.
-  + See =img/Makefile= for more information.
+** 写真
 
-* Org-block templates
+[[jpg:static/display]]
 
-We mark the html tag with org-mode blocks such as =#+BEGIN_EXAMPLE=.
-Using [[http://orgmode.org/manual/Easy-Templates.html][block template]] (by modifying =org-structure-template-alist=),
-you can quickly write such blocks i.e.:
+** 写真
 
-#+BEGIN_EXAMPLE
-at the beginning of line, hit
+[[jpg:static/fix]]
 
-<s<tab>
+* 準備(住居): Airbnb 最高!!!
 
-in normal org-mode destribution in emacs,
-it would expand into:
+| 期間      | 場所                                        | Approx. JPY/day     |
+|-----------+---------------------------------------------+---------------------|
+| 7/26-8/04 | 南ダブリン, Airbnb, 部屋の片隅のベッド      | 4k                  |
+| -9/4      | ダブリン市内, Daft.ie, 三人部屋二段ベッド上 | 1.3k (500EUR/month) |
+| -10/31    | ダブリン郊外, Airbnb, 個室                  | 2.4k (800EUR/month) |
+| 11/1      | Galway, Airbnb, 個室                        | 3.6k                |
+| 11/2      | Belfast UK, Airbnb, 個室                    | 3.8k                |
+| 11/3      | Dublin, Airbnb, 個室                        | 3.9k                |
 
-#+BEGIN_SRC 
+** 同居人
 
-#+END_SRC
-#+END_EXAMPLE
+| 期間      | 場所                 |           |         |
+|-----------+----------------------+-----------+---------|
+| 7/26-8/04 | 部屋の片隅のベッド   | Venezuera |         |
+|           |                      | German    |         |
+|           |                      | Taiwan    |         |
+|-----------+----------------------+-----------+---------|
+| -9/4      | 三人部屋二段ベッド上 | Spain     | China   |
+|           | 9-10人で集団生活     | Italy     | Brazil  |
+|           |                      | France    | Russia  |
+|           |                      | Libya     |         |
+|-----------+----------------------+-----------+---------|
+| -10/31    | 個室                 | Italy     | Croatia |
+|           | 3-4人で集団生活      | France    | Estonia |
 
-** customizing templates
+** 部屋 (ダブリン市内)
 
-We provide custom =org-structure-template-alist=.
-These blocks are recognized by the stylesheet we provide,
-so they are highlighted correctly.
+[[jpg:static/patric]]
+
+** 部屋 (ダブリン郊外)
+
+[[jpg:static/ingram]]
+
+** 部屋 (ダブリン郊外) Charlie
+
+[[jpg:static/charlie]]
+
+** ルームメイト (ダブリン市内)
+
+[[jpg:static/roommates]]
+
+** ルームメイト (ダブリン郊外)
+
+[[jpg:static/iralia]]
+
+** ルームメイト (ダブリン郊外)
+
+[[jpg:static/andrei]]
+
+* IBM Research Ireland
+
+[[png:static/campus]]
+
+* IBM Research Ireland
+
+[[png:campus-fake]]
+
+* 環境
+
+食堂は不味い/2時に閉まる/売店なし/周囲に何もない
+
+[[jpg:static/nothing]]
+
+* 到着後
+
+| 日時  |                                  |
+|-------+----------------------------------|
+| 7/26  | 到着                             |
+| 7/29  | 移民登録 (350€ -- 自費)          |
+| 8/2   | 始めてキャンパス内に             |
+| ~8/9  | ようやくイントラネットアカウント |
+|       | ＝インターネットアクセス         |
+|       | ＝apt-get で開発環境を構築       |
+| ~8/20 | ようやくサーバーアカウント       |
+|       | まともに開発できるようになる     |
+
+実質まともに開発できたのは二ヶ月ちょい
+
+* 病的な既存コード
+
++ テスト無し CI無し ドキュメント無し
++ コードレビュー無し スタイル統一無し
++ ビルドできない古い無数のサブプロジェクト, それらのためだけの関数
++ 不適切なクラス構造, switch 文, 不適切なメソッド名, もはや呼ばれていない関数
++ 手でJSON書き出し (しかも間違ってる)
++ インスタンスをコピーするのにそのJSONに書き出して読み込む
+
+まともなプロセス間APIを手に入れるためのリファクタリングに一ヶ月 (研究できず)
+
+実質まともに研究できたのは一ヶ月 (他のチームはまともなコードなのに…)
+
+* 救い
+
++ *他のチームは* もっと現代的な環境で開発してる
++ 社内に github enterprise がある
++ Travis-CI enterprise もある
++ → 自分でCIをセットアップした
++ → 自動テストも書いた
++ → 古いコードは全部捨て
++ → 残りをリファクタリング
+
+* 給料
 
 #+BEGIN_CONTAINER-FLUID
 #+BEGIN_ROW-FLUID
 #+BEGIN_SPAN6
-+ <S -- smaller
-+ <lar -- larger
-+ <t -- twocolumn
-+ <n -- footnote
-+ <r -- float right
-+ <ar -- align right
-+ <lcr -- "left,center,right" format with x-large fonts
-+ <E -- latex `equation' environment
-+ still more...
+[[png:static/pay]]
+
++ 最初の1ヶ月:45% (Emergency Tax)
+
++ 残り2ヶ月: 20%
+
++ 月22万 - 住居8万 = 14万
+
++ 交通費、食事...
+
++ 航空券16万, 移民登録 3万5千
 #+END_SPAN6
 #+BEGIN_SPAN6
-copy-paste it
-to your =.emacs=
+*アイルランド固有の事情*
 
-#+BEGIN_CENTER
-[[file:config.el]]
-#+END_CENTER
-
++ 統一賃金支払いシステム: PAYE Anytime
++ PAYE Anytime の支払いはアイルランドの銀行のみ *WTF*
++ 現地銀行口座を開設するまで給料を貰えない
++ 現金を用意しておかないと一文無しに!
 #+END_SPAN6
 #+END_ROW-FLUID
 #+END_CONTAINER-FLUID
 
-* Utility
+* 働きかた
 
-+ ./make-periotically.sh [args]
-  + Watches the changes in the directory and =make=
-  + Build statuses are notified in inotify pop-up
-  + all arguments are passed to =make=
-  + dependency : inotifywait, notify-send
-
-* Makefile Targets
-
-+ =make html= -- builds the html version
-+ =make resume= -- builds the resume version
-+ =make pdf= -- builds the pdf version
-+ =make= -- build all
-
-* Test
-
-+ [[http://www.google.com][Link]]
-+ This
-+ Is
-+ A Test
-
-Mathjax formula:
-
-\[
- E=mc^2
-\]
-
-\begin{equation}
- E=mc^2 + \frac{1}{2} mv^2
-\end{equation}
-
-** Twocolumn Test
 
 #+BEGIN_CONTAINER-FLUID
 #+BEGIN_ROW-FLUID
 #+BEGIN_SPAN6
-+ HOOA!
-+ *HOOA!*
-+ HOOA!
+出勤/退勤時間は自由
+
+ただしバスは30分に一本しかありません
+
+ミーティングなければ別に来なくてもいい
+
+ただし超絶面倒くさいVPNのセットアップが必要
 #+END_SPAN6
 #+BEGIN_SPAN6
-This is a LISP ALIEN IN A CAGE!
+*実際の働き方*
 
-[[png:alien]]
+時間がない!
 
+平日: 持ち帰りで家で作業
+
+土日: 早朝まで作業 朝4時ぐらいまで実験
+
+→ 月曜のミーティングのために実験結果を準備etc.
 #+END_SPAN6
 #+END_ROW-FLUID
 #+END_CONTAINER-FLUID
 
+* 何を得られるか
 
-** many columns test
++ 経歴
++ コネ
++ 技術/経験・・・メンターに依る
 
+* What to bring home
 
-#+BEGIN_CONTAINER-FLUID
-#+BEGIN_ROW-FLUID
-#+BEGIN_SPAN3
- a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
-#+END_SPAN3
-#+BEGIN_SPAN3
- b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b
-#+END_SPAN3
-#+BEGIN_SPAN3
- c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c
-#+END_SPAN3
-#+BEGIN_SPAN3
- d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d
-#+END_SPAN3
-#+END_ROW-FLUID
-#+END_CONTAINER-FLUID
+# 若い時間を食い潰す *筋の悪い人/組織* を見極め、避けよう。(例:JSPS,日本)
 
-* A Slide with Too Little Contents
-
-#+BEGIN_CENTER
-#+BEGIN_SMALLER
-Hi, I'm small!
-#+END_SMALLER
-#+END_CENTER
-
-#+BEGIN_NOTE
-See the headline is correctly adjusted
-#+END_NOTE
-
-* Left-Center-Right template
-
-#+BEGIN_XLARGE
-x-large left
-#+BEGIN_CENTER
-centered
-#+END_CENTER
-#+BEGIN_ALIGNRIGHT
-right
-#+END_ALIGNRIGHT
-#+END_XLARGE
-
-#+BEGIN_NOTE
-This is a footnote
-#+END_NOTE
-
-* TODOs
-
-#+BEGIN_CONTAINER-FLUID
-#+BEGIN_ROW-FLUID
-#+BEGIN_SPAN6
-#+BEGIN_SMALLER
-+ Features
-  + Table of contents
-  + +=<dl>= does not expand+ *DONE*
-  + +Showing current keystrokes+ *DONE*
-  + auto-scroll/auto-zoom with big contents
-  + Showing current/total page number
-  + +Changing Stylesheet+ *DONE*. "style"
-  + +Up-Section command+ *DONE*. "u"
-  + Slide thumbnail
-  + +stopwatch/countdown timer+ *DONE*. "timer"
-  + +link to #section+ *DONE*.
-    #+HTML: <a href="index.html#6">sample link</a>
-#+END_SMALLER
-#+END_SPAN6
-#+BEGIN_SPAN6
-#+BEGIN_SMALLER
-+ Features inspired by other tools
-  + Content Search (in org-infojs)
-  + Drawing mode (in [[http://code.google.com/p/jessyink/][jessyink]])
-  + 'Paused' mode (in [[http://lab.hakim.se/reveal-js/][reveal.js]])
-  + +Export to PDF (also in reveal.js)+ *DONE*
-  + +resume output+ *DONE*
-  + Slide with an image covering the entire background (slideshare)
-  + present one paragraph/word/letter at a time
-    + those in [[http://docutils.sourceforge.net/docs/user/slide-shows.s5.html][s5]]
-  + "C-M-x" style notation in the command definition
-#+END_SMALLER
-#+END_SPAN6
-
-#+END_ROW-FLUID
-#+END_CONTAINER-FLUID
