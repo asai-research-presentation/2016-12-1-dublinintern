@@ -19,10 +19,18 @@ Made by guicho2.71828 (Masataro Asai)
 #+END_NOTE
 #+END_outline-text-1
 
+* インターンの仲間
+
+[[jpg:static/interns]]
+
 * 概要
 
-岸本先生およびAdi と研究をしてきました
+岸本先生およびAdi, Radu と研究をしてきました
 
+
+#+BEGIN_CONTAINER-FLUID
+#+BEGIN_ROW-FLUID
+#+BEGIN_SPAN6
 渡航先: アイルランド
 
 渡航機関: 7/26-11/4
@@ -32,6 +40,12 @@ Made by guicho2.71828 (Masataro Asai)
 実際の契約期間: 8/2-10/28
 
 実際の活動期間: 8/20-10/28
+#+END_SPAN6
+#+BEGIN_SPAN6
+
+#+END_SPAN6
+#+END_ROW-FLUID
+#+END_CONTAINER-FLUID
 
 * アイルランド
 
@@ -281,6 +295,7 @@ Made by guicho2.71828 (Masataro Asai)
   + 教えてもらう ← 当然通用しない
   + が、人の尻拭いをすることになるとは予想しなかった
   + 自分が身に着けたい異分野技術を専門とするメンターと組むべきかも
+  + aaaa
 + (ネガティブな)社会経験・・・得られるが、本来避けるべきもの (事務手続きの苦労など)
 + 海外経験・・・移住の知識や多国籍文化。日常生活
 + 論文 ・・・ 書けるが、大学と比べて効率は悪い
